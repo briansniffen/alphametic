@@ -1,14 +1,15 @@
 module Main where
 
-import Prelude hiding (const,not)
+import Prelude hiding (const,not,and,or)
 import Control.Applicative ((<|>))
+import Data.Maybe (fromMaybe)
 import qualified Data.List as L
 import Text.Parser.Char hiding (alphaNum, anyChar, space)
 import Text.Parser.Combinators (sepBy1)
 import Text.Parser.Token (symbolic, ident, natural)
 import Text.Parser.Token.Style (emptyIdents)
 import Text.Trifecta (parseString, Parser, Result(..), _errDoc)
-import SimpleSMT (Solver, SExpr(..), Value(..), Result(..), declare, tInt, assert, int, const, add, mul, eq, gt, lt, not, newSolver, setLogic, check, getConsts)                 
+import SimpleSMT (Solver, SExpr(..), Value(..), Result(..), declare, tInt, assert, int, const, add, mul, eq, gt, lt, not, newSolver, setLogic, check, getConsts, and, or)                 
 import System.Environment (getArgs)
 
 import Criterion.Main
@@ -27,29 +28,19 @@ parse :: String -> Text.Trifecta.Result Expr
 parse = parseString parseStmt mempty
 
 parseStmt :: Parser Expr
-parseStmt = do
-  e <- parseExpr
-  _ <- symbolic '='
-  f <- parseExpr
-  return $ Equal e f
-  
+parseStmt = Equal <$> parseExpr <* symbolic '=' <*> parseExpr
+
 parseExpr :: Parser Expr
-parseExpr = do
-  e <- sepBy1 (parseLit <|> parseMult) (symbolic '+')
-  return $ Sum e
+parseExpr = Sum <$> sepBy1 (parseLit <|> parseMult) (symbolic '+')
 
 parseMult :: Parser Expr
 parseMult = Mul <$> sepBy1 (parseLit <|> parseTerm) (symbolic '*')
 
 parseTerm :: Parser Expr
-parseTerm = do
-  t <- ident emptyIdents
-  return $ Prod t
+parseTerm = Prod <$> ident emptyIdents
 
 parseLit :: Parser Expr
-parseLit = do
-  e <- natural
-  return $ Lit e
+parseLit = Lit <$> natural
 
 variables :: Expr -> String
 variables (Equal e f) = variables e `L.union` variables f
@@ -58,6 +49,9 @@ variables (Mul es) = foldr L.union [] $ map variables es
 variables (Prod s) = L.nub s
 variables (Lit _) = []
 
+-- | We care abotu the initial variables of each term of an expression
+-- because they, conventionally, can't be 0: otherwise they wouldn't
+-- be written.
 initialVariables :: Expr -> String
 initialVariables (Equal e f) = initialVariables e `L.union` initialVariables f
 initialVariables (Sum es) = foldr L.union [] $ map initialVariables es
@@ -80,15 +74,15 @@ setupVariable s cc = do
     where
       c = [cc]
 
-assertDistinct :: Solver -> [Char] -> IO ()
-assertDistinct s cs = mapM_ (assert s) $ [not (eq (const [a]) (const [b])) | a <- cs, b <- cs, a < b]
+distinct :: [Char] -> SExpr
+distinct cs = not $ foldl1 or [eq (const [a]) (const [b]) | a <- cs, b <- cs, a < b]
 
 solve :: Expr -> IO (Maybe [(String,Value)])
 solve e = do
   s <- newSolver "z3" ["-smt2","-in"] Nothing
   mapM_ (setupVariable s) (variables e)
   mapM_ (\v -> assert s (lt (int 0) (const [v]))) (initialVariables e)
-  assertDistinct s (variables e)
+  assert s $ distinct (variables e)
   assert s $ makeAssertion e
   res <- check s
   case res of
@@ -112,11 +106,8 @@ replaceOne env new base = case (lookup [new] env) of
 
 solveExample :: String -> IO String
 solveExample e = case parse e of
-                   Success expr -> formatResults e . fromJust <$> solve expr
+                   Success expr -> formatResults e . fromMaybe [] <$> solve expr
                    Failure xs -> print (_errDoc xs) >> return ""
-  where
-    fromJust (Just x) = x
-    fromJust Nothing = []
 
 main :: IO ()
 main = do
