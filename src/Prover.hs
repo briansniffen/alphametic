@@ -1,4 +1,4 @@
-module Prover where
+module Prover (solve, formatResults, replaceOne, Value(..)) where
 
 import Prelude hiding (const,not,and,or)
 import SimpleSMT (Solver, SExpr(..), Value(..), Result(..), declare, tInt, assert, int, const, add, mul, eq, gt, lt, not, newSolver, setLogic, check, getConsts, and, or)                 
@@ -49,3 +49,4 @@ replaceOne :: [(String, Value)] -> Char -> String -> String
 replaceOne env new base = case (lookup [new] env) of
   Nothing -> new:base
   Just (Int n) -> (head $ show n):base
+

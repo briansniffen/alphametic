@@ -2,7 +2,6 @@ module Alphametic where
 
 import Data.Maybe (fromMaybe)
 import System.Environment (getArgs)
-import Text.Trifecta (parseString, Parser, Result(..), _errDoc)
 
 import Types
 import Parser

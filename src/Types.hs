@@ -1,4 +1,4 @@
-module Types where
+module Types (Expr(..), variables, initialVariables) where
 
 import qualified Data.List as L
 

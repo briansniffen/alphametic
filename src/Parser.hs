@@ -1,4 +1,4 @@
-module Parser where
+module Parser (Parser, Result(..), parse, parseStmt, _errDoc) where
 
 import Control.Applicative ((<|>))
 import Text.Parser.Char hiding (alphaNum, anyChar, space)
