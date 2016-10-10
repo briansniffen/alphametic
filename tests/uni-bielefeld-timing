@@ -1,0 +1,146 @@
+[1m(interactive)[0m:[1m1[0m:[1m1[0m: [91merror[0m: expected: identifier,
+    natural
+# From https://www.math.uni-bielefeld.de/~sillke/PUZZLES/ALPHAMETIC/[1m[94m<EOF>[0;1m[0m 
+[92m^[0m                                                                         
+# From https://www.math.uni-bielefeld.de/~sillke/PUZZLES/ALPHAMETIC/
+
+        0.01 real         0.00 user         0.00 sys
+send + more = money
+9567 + 1085 = 10652
+        0.11 real         0.00 user         0.01 sys
+this + isa + great + time = waster
+5628 + 280 + 97405 + 5234 = 108547
+        0.73 real         0.00 user         0.01 sys
+saturn + uranus + neptune + pluto = planets
+127503 + 502351 + 3947539 + 46578 = 4623971
+       99.22 real         0.00 user         0.01 sys
+mars + venus + saturn + uranus = neptune
+4593 + 20163 + 358691 + 695163 = 1078610
+       15.39 real         0.00 user         0.01 sys
+heart + ears + nose + throat = health
+51324 + 1326 + 9061 + 452034 = 513745
+        5.21 real         0.00 user         0.01 sys
+hurray + huzzah = puzzles
+740065 + 748867 = 1488932
+       99.38 real         0.00 user         0.01 sys
+father + mother = parent
+286753 + 196753 = 483506
+       15.34 real         0.00 user         0.01 sys
+winter + is + windier + summer + is = sunnier
+760281 + 69 + 7604681 + 935581 + 69 = 9300681
+       72.28 real         0.00 user         0.01 sys
+reason = it * is + there
+102357 = 69 * 63 + 98010
+        0.07 real         0.00 user         0.00 sys
+mad * man = asylum
+648 * 647 = 419256
+        0.17 real         0.00 user         0.00 sys
+these + tease + tried = reader
+53646 + 56046 + 51269 = 160961
+        1.09 real         0.00 user         0.01 sys
+adam + and + eve = moved
+8581 + 875 + 939 = 10395
+        0.04 real         0.00 user         0.00 sys
+square + dance = dancer
+824163 + 91573 = 915736
+        5.27 real         0.00 user         0.01 sys
+pierre + elliott = trudeau
+246116 + 6884577 = 7130693
+       15.23 real         0.00 user         0.01 sys
+apple + grape + plum = banana
+67723 + 89673 + 7250 = 164646
+        3.33 real         0.00 user         0.01 sys
+apple + lemon = banana
+67794 + 94832 = 162626
+        0.56 real         0.00 user         0.01 sys
+we + want + no + new + atomic = weapon
+20 + 2149 + 48 + 402 + 198765 = 201384
+        0.21 real         0.00 user         0.01 sys
+peanut + teeth = carter
+170643 + 37735 = 208378
+        5.23 real         0.00 user         0.01 sys
+terrible + number = thirteen
+45881795 + 302758 = 46184553
+       10.66 real         0.00 user         0.01 sys
+zeroes + ones = binary
+698392 + 3192 = 701584
+        0.45 real         0.00 user         0.01 sys
+wrong + wrong = right
+12938 + 12938 = 25876
+        0.41 real         0.00 user         0.01 sys
+nora * l = aron
+2178 * 4 = 8712
+        0.12 real         0.00 user         0.01 sys
+alphabet + letters = scrabble
+17531908 + 7088062 = 24619970
+       76.41 real         0.00 user         0.01 sys
+nailor + lingel = faceoff
+805279 + 258432 = 1063711
+       12.17 real         0.00 user         0.01 sys
+a * webtv = dddddd
+7 * 95238 = 666666
+        0.08 real         0.00 user         0.00 sys
+gauss + riese = euklid
+57088 + 46181 = 103269
+        7.50 real         0.00 user         0.01 sys
+sin * sin + cos * cos = unite
+235 * 235 + 142 * 142 = 75389
+        0.26 real         0.00 user         0.01 sys
+"Unsatisfiable constraints"
+x * alcohol = hangover
+x * alcohol = hangover
+        3.21 real         0.00 user         0.01 sys
+bobby + loved = jewels
+48449 + 58603 = 107052
+       15.73 real         0.00 user         0.01 sys
+he * he = she
+25 * 25 = 625
+        0.03 real         0.00 user         0.01 sys
+ba * cba = dcba
+25 * 125 = 3125
+        0.07 real         0.00 user         0.01 sys
+this * is = aphis
+3125 * 25 = 78125
+        0.20 real         0.00 user         0.00 sys
+jgdch + ifabe = bibdeb
+98254 + 63017 = 161271
+        0.12 real         0.00 user         0.01 sys
+earth + air + fire + water = nature
+67432 + 704 + 8046 + 97364 = 173546
+        1.63 real         0.00 user         0.01 sys
+two * two = square
+567 * 567 = 321489
+        0.34 real         0.00 user         0.01 sys
+abcba = d * be * bffa
+91819 = 7 * 13 * 1009
+        0.37 real         0.00 user         0.01 sys
+five + five + nine + eleven = thirty
+4027 + 4027 + 5057 + 797275 = 810386
+        0.76 real         0.00 user         0.01 sys
+vingt + cinq + cinq = trente
+94851 + 6483 + 6483 = 107817
+        0.61 real         0.00 user         0.01 sys
+ein + ein + ein + ein = vier
+821 + 821 + 821 + 821 = 3284
+        0.03 real         0.00 user         0.00 sys
+sechs + sechs = zwoelf
+69476 + 69476 = 138952
+        5.24 real         0.00 user         0.01 sys
+uno + uno + tree = cinco
+536 + 536 + 9244 = 10316
+        0.03 real         0.00 user         0.00 sys
+six + six + six = nine + nine
+942 + 942 + 942 = 1413 + 1413
+        0.02 real         0.00 user         0.00 sys
+forty + ten + ten = sixty
+29786 + 850 + 850 = 31486
+        1.01 real         0.00 user         0.01 sys
+two * two = three
+138 * 138 = 19044
+        0.07 real         0.00 user         0.00 sys
+three = two + one + zero
+10366 = 185 + 546 + 9635
+        0.05 real         0.00 user         0.00 sys
+abc + def = ghi
+463 + 127 = 590
+        0.48 real         0.00 user         0.01 sys
